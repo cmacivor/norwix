@@ -1,0 +1,3 @@
+Inductive Automation Ignition installation: http://localhost:8088/web/home?0
+username: cmacivor
+password: password
