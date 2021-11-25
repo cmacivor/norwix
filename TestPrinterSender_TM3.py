@@ -11,15 +11,11 @@ PORT = 10001        # The port used by the server
 #this sender works in Read Print mode
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
    
-    #this gets a response, but it's an error in the log. Bad bytes!
-    #concatMessage = GlobalConstants.StartTransmissionCharacter + "F6" + GlobalConstants.EndTransmissionCharacter
+   #Section 3.4.2 Send Dynamic Data TM3 Remote
 
-    #This seems to sort of correct- gets "Received SEND_DYNAMIC_DATA_RP1_REMOTE  $6 [24 36 ]" in the log
-    concatMessage = GlobalConstants.StartTransmissionCharacter + GlobalConstants.GetSystemStatus + GlobalConstants.EndTransmissionCharacter
+    concatMessage = GlobalConstants.StartTransmissionCharacter + "Jones" + GlobalConstants.EndTransmissionCharacter
+    #concatMessage =  GlobalConstants.CapitalF + GlobalConstants.CapitalF + GlobalConstants.Number2 + GlobalConstants.PostAmble1
 
-
-
-    concatMessage = GlobalConstants.StartTransmissionCharacter + "\xf6" + GlobalConstants.EndTransmissionCharacter
     encodedMessage = concatMessage.encode('charmap')
 
 
